@@ -5,14 +5,16 @@ const ImageGallery = ({ images = [] }) => {
   return (
     <ImageList
       variant='masonry'
+      cols={0}
+      gap={8}
       sx={{
         width: '100%',
-        gridTemplateColumns: {
-          xs: 'repeat(1, 1fr) !important',
-          sm: 'repeat(2, 1fr) !important',
-          md: 'repeat(3, 1fr) !important',
-          lg: 'repeat(4, 1fr) !important',
-          xl: 'repeat(5, 1fr) !important',
+        columnCount: {
+          xs: 1,
+          sm: 2,
+          md: 3,
+          lg: 4,
+          xl: 5,
         },
       }}
     >
