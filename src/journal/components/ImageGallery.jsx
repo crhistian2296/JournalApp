@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 const ImageGallery = ({ images = [] }) => {
   return (
     <ImageList
+      variant='masonry'
       sx={{
         width: '100%',
         gridTemplateColumns: {
