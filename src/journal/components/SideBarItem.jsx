@@ -20,6 +20,10 @@ const SideBarItem = ({ id, date, title, body, imageUrls = [] }) => {
     title?.length > 17 ? title.substring(0, 17) + '...' : title
   );
 
+  const newBody = useMemo(() =>
+    body?.length > 40 ? body.substring(0, 40) + '...' : body
+  );
+
   const isActive = () => active?.id === id;
   const activeElement = isActive();
 
@@ -40,7 +44,7 @@ const SideBarItem = ({ id, date, title, body, imageUrls = [] }) => {
         </ListItemIcon>
         <Grid container>
           <ListItemText primary={newTitle} />
-          <ListItemText secondary={body} />
+          <ListItemText secondary={newBody} />
         </Grid>
       </ListItemButton>
     </ListItem>
