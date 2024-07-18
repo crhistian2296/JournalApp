@@ -1,20 +1,24 @@
 import { Box, Toolbar } from '@mui/material';
 import PropTypes from 'prop-types';
+import { useReducer } from 'react';
 import NavBar from '../components/NavBar';
 import SideBar from '../components/SideBar';
-import { useState } from 'react';
 
 const JournalLayout = ({ children }) => {
-  const [drawerWidth, setdrawerWidth] = useState(240);
+  const drawerWidth = 240;
+  const [isOpen, toggleIsOpen] = useReducer(state => !state, false);
 
   return (
     <Box
       display='flex'
       className='animate__animated animate__fadeIn animate__faster'
     >
-      <NavBar drawerWidth={drawerWidth} setdrawerWidth={setdrawerWidth} />
+      <NavBar sidebarOpenSettings={{ isOpen, toggleIsOpen }} />
 
-      <SideBar drawerWidth={drawerWidth} setdrawerWidth={setdrawerWidth} />
+      <SideBar
+        drawerWidth={drawerWidth}
+        sidebarOpenSettings={{ isOpen, toggleIsOpen }}
+      />
 
       <Box component='main' flexGrow={1} p={3} justifyContent={'space-between'}>
         <Toolbar />
