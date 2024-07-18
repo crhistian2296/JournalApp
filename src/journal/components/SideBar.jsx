@@ -29,7 +29,6 @@ const SideBar = ({ drawerWidth = 240, sidebarOpenSettings }) => {
       open={isOpen}
       onClose={toggleIsOpen}
       component='nav'
-      ModalProps={Close}
       sx={{
         width: { sm: drawerWidth },
         flexShrink: { sm: 0 },
@@ -50,7 +49,7 @@ const SideBar = ({ drawerWidth = 240, sidebarOpenSettings }) => {
       <Divider />
       <List>
         {notes.map(note => (
-          <SideBarItem key={note.id} {...note} />
+          <SideBarItem key={note.id ?? self.crypto.randomUUID()} {...note} />
         ))}
       </List>
     </Drawer>

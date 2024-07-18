@@ -18,16 +18,6 @@ const HomePage = () => {
 
   return (
     <JournalLayout>
-      {/* <Typography>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis illum
-        blanditiis nostrum culpa, molestias suscipit reprehenderit. Iste
-        consequuntur numquam voluptatibus asperiores unde, obcaecati, excepturi
-        labore magni eligendi itaque esse aspernatur!Lorem ipsum dolor sit amet
-        consectetur adipisicing elit. Facilis illum blanditiis nostrum culpa,
-        molestias suscipit reprehenderit. Iste consequuntur numquam voluptatibus
-        asperiores unde, obcaecati, excepturi labore magni eligendi itaque esse
-        aspernatur!
-      </Typography> */}
       {active ? <NoteView /> : <NothingSelectedView />}
 
       <IconButton
@@ -35,11 +25,11 @@ const HomePage = () => {
         disabled={isSaving}
         onClick={() => onClickNewNote()}
         sx={{
-          color: 'white',
-          backgroundColor: 'error.main',
+          color: '#ddddd',
+          backgroundColor: '#e8e8e8',
           transition: 'opacity 300ms',
           ':hover': {
-            backgroundColor: 'error.main',
+            backgroundColor: '#e8e8e8',
             opacity: 0.7,
           },
           position: 'fixed',
