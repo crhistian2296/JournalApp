@@ -1,5 +1,6 @@
-import { ImageList, ImageListItem } from '@mui/material';
+import { ImageList } from '@mui/material';
 import PropTypes from 'prop-types';
+import CheckFileType from './CheckFileType';
 
 const ImageGallery = ({ images = [] }) => {
   return (
@@ -19,20 +20,7 @@ const ImageGallery = ({ images = [] }) => {
       }}
     >
       {images.map(url => (
-        <ImageListItem key={url}>
-          <img
-            srcSet={`${url}`}
-            src={`${url}`}
-            alt='imagen de la nota'
-            loading='lazy'
-            style={{
-              display: 'block',
-              objectFit: 'contain',
-              overflow: 'hidden',
-              margin: '0 auto',
-            }}
-          />
-        </ImageListItem>
+        <CheckFileType fileName={url} key={url} />
       ))}
     </ImageList>
   );
